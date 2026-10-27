@@ -1,10 +1,11 @@
 export const profileData = {
   name: "Abril Pilar Barrientos",
-  role: "Desarrolladora Frontend & Diseñadora UX/UI",
+  role: "Desarrolladora Web",
   location: "Buenos Aires, Argentina",
-  availability: "Disponible para proyectos y oportunidades laborales",
-  bio: "Estudiante de desarrollo web y sistemas multimedia con sólida experiencia en la creación de aplicaciones web full-stack, interfaces responsivas y sistemas de diseño accesibles.",
-  email: "abril.barrientos@example.com",
+  availability: "Disponible",
+  schedule: "Disponibilidad: Full-time / Part-time",
+  email: "barrientosabrilpilar@hotmail.com",
+  phone: "+54 9 11 50246554",
   links: {
     linkedin: "https://linkedin.com/in/abril-barrientos",
     github: "https://github.com/abrilbarrientos",
@@ -13,7 +14,7 @@ export const profileData = {
   specialties: [
     "Diseño UX/UI",
     "Desarrollo Frontend",
-    "Vue.js & JavaScript",
+    "JavaScript",
     "Sistemas de Diseño"
   ]
 };

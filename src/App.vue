@@ -28,7 +28,7 @@ const handleNavigate = (sectionId) => {
 
     <!-- Contenedor Principal Central y Tarjeta de Perfil -->
     <div class="workspace-main-wrapper">
-      <ProfileCard />
+      
 
       <main class="workspace-content">
         <HeroSection @navigate="handleNavigate" />
@@ -49,6 +49,7 @@ const handleNavigate = (sectionId) => {
         <CvSection />
         <ContactSection />
       </main>
+      <ProfileCard />
     </div>
 
     <!-- Navegación móvil inferior -->
@@ -69,7 +70,7 @@ const handleNavigate = (sectionId) => {
 .workspace-main-wrapper {
   display: flex;
   gap: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   flex: 1;
   align-items: flex-start;
 }

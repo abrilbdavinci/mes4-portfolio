@@ -1,6 +1,6 @@
 <script setup>
 import { profileData } from '../../data/profile.js'
-import { MapPin, Mail, Linkedin, Github, Download, CheckCircle2 } from 'lucide-vue-next'
+import { MapPin, Mail, Phone, Clock, Linkedin, Github, Download, CheckCircle2 } from 'lucide-vue-next'
 </script>
 
 <template>
@@ -15,8 +15,20 @@ import { MapPin, Mail, Linkedin, Github, Download, CheckCircle2 } from 'lucide-v
 
     <div class="profile-meta">
       <div class="meta-item">
-        <MapPin :size="16" />
+        <MapPin :size="16" class="meta-icon" />
         <span>{{ profileData.location }}</span>
+      </div>
+      <div class="meta-item">
+        <Mail :size="16" class="meta-icon" />
+        <a :href="`mailto:${profileData.email}`" class="meta-link">{{ profileData.email }}</a>
+      </div>
+      <div class="meta-item" v-if="profileData.phone">
+        <Phone :size="16" class="meta-icon" />
+        <a :href="`tel:${profileData.phone.replace(/\s+/g, '')}`" class="meta-link">{{ profileData.phone }}</a>
+      </div>
+      <div class="meta-item">
+        <Clock :size="16" class="meta-icon" />
+        <span>{{ profileData.schedule }}</span>
       </div>
       <div class="meta-item availability">
         <CheckCircle2 :size="16" class="status-icon" />
@@ -24,15 +36,6 @@ import { MapPin, Mail, Linkedin, Github, Download, CheckCircle2 } from 'lucide-v
       </div>
     </div>
 
-    <p class="profile-bio">
-      {{ profileData.bio }}
-    </p>
-
-    <div class="profile-specialties">
-      <span v-for="(spec, index) in profileData.specialties" :key="index" class="specialty-tag">
-        {{ spec }}
-      </span>
-    </div>
 
     <div class="profile-actions">
       <a :href="profileData.links.cv" download class="btn-primary">
@@ -45,9 +48,6 @@ import { MapPin, Mail, Linkedin, Github, Download, CheckCircle2 } from 'lucide-v
         </a>
         <a :href="profileData.links.github" target="_blank" rel="noopener" aria-label="GitHub">
           <Github :size="20" />
-        </a>
-        <a :href="`mailto:${profileData.email}`" aria-label="Correo electrónico">
-          <Mail :size="20" />
         </a>
       </div>
     </div>
@@ -103,7 +103,7 @@ import { MapPin, Mail, Linkedin, Github, Download, CheckCircle2 } from 'lucide-v
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.55rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--color-border);
@@ -114,16 +114,27 @@ import { MapPin, Mail, Linkedin, Github, Download, CheckCircle2 } from 'lucide-v
   align-items: center;
   gap: 0.5rem;
   color: var(--color-paragraph);
+  word-break: break-all;
+}
+
+.meta-icon {
+  color: var(--color-button);
+  flex-shrink: 0;
+}
+
+.meta-link {
+  color: var(--color-paragraph);
+  transition: color 0.2s ease;
+}
+
+.meta-link:hover {
+  color: var(--color-headline);
+  text-decoration: underline;
 }
 
 .status-icon {
   color: #2e7d32;
-}
-
-.profile-bio {
-  font-size: 0.85rem;
-  margin-bottom: 1.25rem;
-  color: var(--color-paragraph);
+  flex-shrink: 0;
 }
 
 .profile-specialties {

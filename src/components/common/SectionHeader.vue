@@ -20,7 +20,7 @@ defineProps({
 .section-header h2 {
   font-size: 1.75rem;
   color: var(--color-headline);
-  margin-bottom: 0.25rem;
+  margin: 0.25rem 0;
 }
 
 .section-header p {

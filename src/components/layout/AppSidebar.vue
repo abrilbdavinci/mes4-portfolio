@@ -25,9 +25,7 @@ const navItems = [
 
 <template>
   <nav class="sidebar" aria-label="Navegación principal">
-    <div class="sidebar-brand">
-      <span class="brand-badge">AB</span>
-    </div>
+    
     
     <ul class="sidebar-menu">
       <li v-for="item in navItems" :key="item.id">
@@ -62,14 +60,7 @@ const navItems = [
   padding-left: 0.75rem;
 }
 
-.brand-badge {
-  background-color: var(--color-headline);
-  color: var(--color-background);
-  font-weight: 800;
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--radius-sm);
-  font-size: 1.1rem;
-}
+
 
 .sidebar-menu {
   list-style: none;

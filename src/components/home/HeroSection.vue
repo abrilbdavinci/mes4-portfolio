@@ -8,10 +8,7 @@ defineEmits(['navigate'])
 
 <template>
   <section id="inicio" class="hero-section">
-    <div class="hero-tag">
-      <Sparkles :size="16" />
-      <span>Portfolio Profesional & Workspace</span>
-    </div>
+    
     
     <h1 class="hero-title">
       Diseño de experiencias digitales y desarrollo web con enfoque analítico.
@@ -69,7 +66,7 @@ defineEmits(['navigate'])
 .hero-title {
   font-size: 2.25rem;
   color: var(--color-headline);
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   letter-spacing: -0.02em;
 }
 
